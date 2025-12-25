@@ -1,6 +1,7 @@
 export function AstronautDog({ className }: { className?: string }) {
   return (
     <svg 
+      className={className}
       height="64px" 
       width="64px" 
       version="1.1" 
