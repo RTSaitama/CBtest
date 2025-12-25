@@ -1,0 +1,17 @@
+.readMoreWrapper{
+display: flex;
+gap: 6px;
+align-items: center;
+text-align: center;
+margin: 0;
+padding: 0; 
+ 
+}
+.readMoreText{
+display: inline-flex;
+max-width: 110px;
+font-family: 'Montserrat', sans-serif;
+font-size: 16px;
+font-weight: bold;
+line-height: 1.5;
+}

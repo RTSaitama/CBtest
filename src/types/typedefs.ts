@@ -1,0 +1,30 @@
+export type Article = {
+  id: number;
+  title: string;
+  url: string;
+  image_url: string;
+  news_site: string;
+  summary: string;
+  published_at: string;
+  updated_at: string;
+  featured: boolean;
+  launches: Launch[];
+  events: Event[];
+};
+
+export type Launch = {
+  launch_id: string;
+  provider: string;
+};
+
+export type Event = {
+  event_id: number;
+  provider: string;
+};
+
+export type ArticlesResponse = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Article[];
+};

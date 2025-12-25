@@ -1,0 +1,32 @@
+.searchWrapper{
+  width: 100%;
+  max-width: 600px;
+  height: 80px;
+  margin-bottom: 40px;
+}
+.searchLabel{
+display: block;
+font-size: 16px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
+color: #363636;
+margin-bottom: 10px;
+}
+.searchInputWrapper{
+  height: 50px;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  align-content: center;
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+.searchInput{
+  display: block;
+  min-width: 376px;
+  border: none;
+  outline: none;
+}
+ 
