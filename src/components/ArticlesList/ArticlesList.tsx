@@ -11,7 +11,7 @@ import { Results } from "../Results/Results";
 import { useFilters } from "../../hooks/useFilters";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
-import { QueryMatchLighting } from "../../utils/queryMatchLighting";
+import { QueryMatchLighting } from "../../utils/QueryMatchLighting";
 
 export function ArticlesList() {
   const filteredArticles = useFilters();

@@ -21,7 +21,7 @@ const articlesApi = createApi({
     
     getArticleInfo: builder.query<Article, number>({
       query: (id) => `/articles/${id}/`,
-      providesTags: (result, error, id) => [{ type: 'Article', id }],
+      providesTags: (_result, _error, id) => [{ type: 'Article', id }],
     }),
     
     searchArticles: builder.query<Article[], string>({
