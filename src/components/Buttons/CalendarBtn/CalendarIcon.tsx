@@ -44,36 +44,3 @@ export default function CalendarIcon({ size = 16, color = "#363636", opacity = 0
   );
 }
 
-// Demo
-export function Demo() {
-  return (
-    <div className="flex flex-col gap-8 p-8 bg-gray-50">
-      <div className="flex gap-4 items-center">
-        <h3 className="text-sm font-semibold text-gray-600">Default:</h3>
-        <CalendarIcon />
-      </div>
-      
-      <div className="flex gap-4 items-center">
-        <h3 className="text-sm font-semibold text-gray-600">Size 32:</h3>
-        <CalendarIcon size={32} />
-      </div>
-      
-      <div className="flex gap-4 items-center">
-        <h3 className="text-sm font-semibold text-gray-600">Size 48, Blue:</h3>
-        <CalendarIcon size={48} color="#0066cc" />
-      </div>
-      
-      <div className="flex gap-4 items-center">
-        <h3 className="text-sm font-semibold text-gray-600">Full opacity:</h3>
-        <CalendarIcon size={32} color="#e74c3c" opacity={1} />
-      </div>
-      
-      <div className="flex gap-4 items-center">
-        <h3 className="text-sm font-semibold text-gray-600">Multiple icons:</h3>
-        <CalendarIcon size={20} />
-        <CalendarIcon size={20} color="#27ae60" />
-        <CalendarIcon size={20} color="#9b59b6" />
-      </div>
-    </div>
-  );
-}
