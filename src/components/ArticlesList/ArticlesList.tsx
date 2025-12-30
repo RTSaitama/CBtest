@@ -34,7 +34,7 @@ export function ArticlesList() {
               <div className={styles.cardWrapper}>
                 <div className={styles.cardImageWrapper}>
                   <img
-                    src={article.image_url}
+                    src={article.image_url ?? '/NASAplaceholder.webp'}
                     alt={article.title}
                   />
                 </div>
