@@ -28,7 +28,7 @@ export function ArticlesList() {
       <div className={styles.cardsList}>
         {filteredArticles?.map((article: Article) => {
           const preparedDescription = article.summary && `${article?.summary.slice(0,140)}...`
-
+          const preparedTitle = article.title && `${article?.title.slice(0,20)}...`
           return (
             <NavLink key={article.id} to={`/v4/articles/${article.id}`}>
               <div className={styles.cardWrapper}>
@@ -43,7 +43,7 @@ export function ArticlesList() {
                     <CalendarIcon />
                     <p className={styles.cardDate}>{new Date(article.published_at).toLocaleDateString()}</p>
                   </div>
-                  <p className={styles.cardTitle}>{QueryMatchLighting(article.title, searchQuery)} </p>
+                  <p className={styles.cardTitle}>{QueryMatchLighting(preparedTitle, searchQuery)} </p>
                   <p className={styles.cardAbout}>{QueryMatchLighting(preparedDescription, searchQuery)}</p>
                   <ReadMoreButton />
                 </div>
