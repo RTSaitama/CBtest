@@ -1,12 +1,13 @@
-import { useGetArticlesQuery } from '../../redux/articlesApi';
+import { useFilters } from '../../hooks/useFilters';
 import styles from './Results.module.scss';
 
 export function Results () { 
- const { data } = useGetArticlesQuery({ limit: 20, offset: 0 });
+
+ const  filteredArticles  = useFilters()
 
   return(
     <div className={styles.resultsWrapper}>
-      <p className={styles.resultsText}>Results:{data?.length ?? 0}</p>
+      <p className={styles.resultsText}>Results:{filteredArticles?.length ?? 0}</p>
     </div>
   )
 }
