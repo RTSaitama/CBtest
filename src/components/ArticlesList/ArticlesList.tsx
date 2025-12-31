@@ -15,7 +15,7 @@ import { QueryMatchLighting } from "../../utils/QueryMatchLighting";
 
 export function ArticlesList() {
   const filteredArticles = useFilters();
-  const {  isLoading, isError } = useGetArticlesQuery({ limit: 100, offset: 0 });
+  const { isLoading, isError } = useGetArticlesQuery({ limit: 100, offset: 0 });
   const searchQuery = useSelector((state: RootState) => state.filters.searchQuery);
   if (isLoading) return <LoadingPage />;
   if (isError) return <ErrorPage />;
@@ -23,12 +23,12 @@ export function ArticlesList() {
   return (
     <div className="container">
       <Search />
-      <Results/>
- 
+      <Results />
+
       <div className={styles.cardsList}>
         {filteredArticles?.map((article: Article) => {
-          const preparedDescription = article.summary && `${article?.summary.slice(0,140)}...`
-          const preparedTitle = article.title && `${article?.title.slice(0,20)}...`
+          const preparedDescription = article.summary && `${article?.summary.slice(0, 140)}...`
+          const preparedTitle = article.title && `${article?.title.slice(0, 20)}...`
           return (
             <NavLink key={article.id} to={`/v4/articles/${article.id}`}>
               <div className={styles.cardWrapper}>
@@ -36,6 +36,9 @@ export function ArticlesList() {
                   <img
                     src={article.image_url ?? '/NASAplaceholder.webp'}
                     alt={article.title}
+                    onError={(e) => {
+                      e.currentTarget.src = '/NASAplaceholder.webp';
+                    }}
                   />
                 </div>
                 <div className={styles.cardInfoWrapper}>
