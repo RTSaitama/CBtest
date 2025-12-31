@@ -30,28 +30,30 @@ export function ArticlesList() {
           const preparedDescription = article.summary && `${article?.summary.slice(0, 140)}...`
           const preparedTitle = article.title && `${article?.title.slice(0, 40)}...`
           return (
-            <NavLink key={article.id} to={`/v4/articles/${article.id}`}>
-              <div className={styles.cardWrapper}>
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src={article.image_url ?? '/CBtest/NASAplaceholder.webp'}
-                    alt={article.title}
-                    onError={(e) => {
-                      e.currentTarget.src = '/CBtest/NASAplaceholder.webp';
-                    }}
-                  />
-                </div>
-                <div className={styles.cardInfoWrapper}>
-                  <div className={styles.cardDateWrapper}>
-                    <CalendarIcon />
-                    <p className={styles.cardDate}>{new Date(article.published_at).toLocaleDateString()}</p>
-                  </div>
-                  <p className={styles.cardTitle}>{QueryMatchLighting(preparedTitle, searchQuery)} </p>
-                  <p className={styles.cardAbout}>{QueryMatchLighting(preparedDescription, searchQuery)}</p>
-                  <ReadMoreButton />
-                </div>
+
+            <div className={styles.cardWrapper} key={article.id}>
+              <div className={styles.cardImageWrapper}>
+                <img
+                  src={article.image_url ?? '/CBtest/NASAplaceholder.webp'}
+                  alt={article.title}
+                  onError={(e) => {
+                    e.currentTarget.src = '/CBtest/NASAplaceholder.webp';
+                  }}
+                />
               </div>
-            </NavLink>
+              <div className={styles.cardInfoWrapper}>
+                <div className={styles.cardDateWrapper}>
+                  <CalendarIcon />
+                  <p className={styles.cardDate}>{new Date(article.published_at).toLocaleDateString()}</p>
+                </div>
+                <p className={styles.cardTitle}>{QueryMatchLighting(preparedTitle, searchQuery)} </p>
+                <p className={styles.cardAbout}>{QueryMatchLighting(preparedDescription, searchQuery)}</p>
+                <NavLink to={`/v4/articles/${article.id}`}>
+                  <ReadMoreButton />
+                </NavLink>
+              </div>
+            </div>
+
           )
         })}
       </div>
