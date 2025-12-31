@@ -28,16 +28,16 @@ export function ArticlesList() {
       <div className={styles.cardsList}>
         {filteredArticles?.map((article: Article) => {
           const preparedDescription = article.summary && `${article?.summary.slice(0, 140)}...`
-          const preparedTitle = article.title && `${article?.title.slice(0, 20)}...`
+          const preparedTitle = article.title && `${article?.title.slice(0, 40)}...`
           return (
             <NavLink key={article.id} to={`/v4/articles/${article.id}`}>
               <div className={styles.cardWrapper}>
                 <div className={styles.cardImageWrapper}>
                   <img
-                    src={article.image_url ?? '/NASAplaceholder.webp'}
+                    src={article.image_url ?? '/CBtest/NASAplaceholder.webp'}
                     alt={article.title}
                     onError={(e) => {
-                      e.currentTarget.src = '/NASAplaceholder.webp';
+                      e.currentTarget.src = '/CBtest/NASAplaceholder.webp';
                     }}
                   />
                 </div>
