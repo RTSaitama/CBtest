@@ -7,7 +7,7 @@ export function ReadMoreButton() {
     <Button 
       className={styles.readMoreWrapper}
       color="inherit"
-      sx={{ textTransform: 'none' }}
+      sx={{ textTransform: 'none', marginTop:'20px', height:'24px', position:'absolute', bottom:'25px', left:'25px'  }}
     >
       <p className={styles.readMoreText}>Read more</p>
     <ArrowRightIcon/>
