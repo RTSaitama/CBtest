@@ -15,11 +15,18 @@ export function ArticlePage() {
   if (isError || !data) return <ErrorPage />;
 
   const article = data;
-  
+
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardImageWrapper}>
-        <img src={article.image_url} alt={article.title} />
+        <img
+          src={article.image_url ?? '/CBtest/NASAplaceholder.webp'}
+          alt={article.title}
+          onError={(e) => {
+            e.currentTarget.src = '/CBtest/NASAplaceholder.webp';
+          }}
+        />
+
       </div>
       <div className={styles.cardInfoWrapper}>
         <p className={styles.cardTitle}>{article.title}</p>
@@ -27,7 +34,7 @@ export function ArticlePage() {
           <p className={styles.cardAbout}>{article.summary}</p>
         )}
       </div>
-      <BackToHomepageBtn  />
+      <BackToHomepageBtn />
     </div>
   );
 }
